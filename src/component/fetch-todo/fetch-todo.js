@@ -6,7 +6,7 @@ const FetchTodo = () => {
 
   const [data, setData] = useState([]);
 
-  const apiEndPoint = "https://todo-list-backend-eqk4.onrender.com";
+  // const apiEndPoint = "https://todo-list-backend-eqk4.onrender.com";
 
   useEffect(() => {
     getData();
@@ -15,7 +15,7 @@ const FetchTodo = () => {
   const getData = () => {
     axios({
       method:"get",
-      url: `${apiEndPoint}/getdata`,
+      url: "https://todo-list-backend-eqk4.onrender.com/getdata",
       headers : {'Content-Type' : 'application/json'}
     }).then(response => {
       setData(response.data);
