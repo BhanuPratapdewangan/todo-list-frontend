@@ -15,7 +15,7 @@ const FetchTodo = () => {
   const getData = () => {
     axios({
       method:"get",
-      url: `${afpiEndPoint}/getdata`,
+      url: `${apiEndPoint}/getdata`,
       headers : {'Content-Type' : 'application/json'}
     }).then(response => {
       setData(response.data);
