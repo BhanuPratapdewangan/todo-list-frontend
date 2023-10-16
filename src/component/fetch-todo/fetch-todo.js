@@ -13,7 +13,7 @@ const FetchTodo = () => {
   const getData = () => {
     axios({
       method:"get",
-      url:"http://localhost:1800/getdata",
+      url:"https://todo-list-backend-eqk4.onrender.com/getdata",
     }).then(response => {
       setData(response.data);
     })
