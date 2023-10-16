@@ -16,11 +16,11 @@ const FetchTodo = () => {
     axios({
       method:"get",
       url: "https://todo-list-backend-eqk4.onrender.com/getdata",
-      headers : {'Content-Type' : 'application/json'}
     }).then(response => {
       setData(response.data);
     })
   }
+
 
   return (
     <div>
