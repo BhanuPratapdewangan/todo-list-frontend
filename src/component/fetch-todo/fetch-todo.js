@@ -25,7 +25,6 @@ const FetchTodo = () => {
   const getData = async() => {
     let Data = await fetch("https://todo-list-backend-eqk4.onrender.com/getdata", {
       method: "get",
-      body: JSON.stringify({ }),
       headers: {
         'Content-Type': 'application/json',
         // authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
