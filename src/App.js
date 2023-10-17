@@ -7,6 +7,7 @@ import HomeComponent from './component/HomeComponent/HomeComponent.js';
 import InvalidComponent from './component/InvalidComponent/InvalidComponent.js';
 import LandingComponent from './component/LandingComponent/LandingComponent.js';
 import PrivateComponent from './component/PrivateComponent/PrivateComponent.js';
+import FetchTodo from './component/fetch-todo/fetch-todo.js';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<SingIn />}></Route>
             <Route path='home' element={<HomeComponent />}></Route>
             <Route path='invalid' element={<InvalidComponent />}></Route>
+            <Route path='todo' element={<FetchTodo />}></Route>
           </Route>
 
           <Route path="signin" element={<SingIn />}></Route>

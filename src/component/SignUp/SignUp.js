@@ -19,7 +19,7 @@ const SignUp = () => {
             return false;
         }
 
-        let result = await fetch("http://localhost:3800/signup", {
+        let result = await fetch("https://todo-list-backend-eqk4.onrender.com/signup", {
 
             method: "POST",
             body: JSON.stringify({ name, email, password }),

@@ -18,7 +18,7 @@ const SingIn = () => {
             return false
         }
 
-        let data = await fetch("http://localhost:3800/signin", {
+        let data = await fetch("https://todo-list-backend-eqk4.onrender.com/signin", {
             method: "POST",
             body: JSON.stringify({ email, password }),
             headers: {
@@ -34,7 +34,7 @@ const SingIn = () => {
 
         if (data.auth) {
             alert("Login Successfully...!");
-            Navigate("/home");
+            Navigate("/todo");
         } else {
             alert("Incorrect input");
         }
