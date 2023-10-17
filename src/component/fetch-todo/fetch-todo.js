@@ -20,31 +20,35 @@ const FetchTodo = () => {
   //     setData(response.data);
   //   })
   // }
-  
 
-  const getData = async() => {
+
+  const getData = async () => {
     let Data = await fetch("https://todo-list-backend-eqk4.onrender.com/getdata", {
       method: "get",
       headers: {
         'Content-Type': 'application/json',
-        // authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
+        authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
       }
     })
 
     Data = await Data.json();
-    if(Data) {
-      setData(Data);
+
+    if (data.auth) {
+      alert("Login Successfully...!");
+      if (Data) {
+        setData(Data);
+      } else {
+        alert("Some error");
+      }
+      Navigate("/");
+    } else {
+      alert("Incorrect input");
     }
 
-    // localStorage.setItem('token', JSON.stringify(data.auth));
-    // localStorage.setItem('user', JSON.stringify(data.data));
+    localStorage.setItem('token', JSON.stringify(data.auth));
+    localStorage.setItem('user', JSON.stringify(Data.data));
 
-    // if (data.auth) {
-    //   alert("Login Successfully...!");
-    //   Navigate("/home");
-    // } else {
-    //   alert("Incorrect input");
-    // }
+
   }
 
   return (
