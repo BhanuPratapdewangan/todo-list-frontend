@@ -23,7 +23,7 @@ const FetchTodo = () => {
 
 
   const getData = async() => {
-    let Data = await fetch("https://todo-list-backend-eqk4.onrender.com/getdata", {
+    let Data = await fetch("http://localhost:1800/getdata", {
       method: "get",
       headers: {
         'Content-Type': 'application/json',
