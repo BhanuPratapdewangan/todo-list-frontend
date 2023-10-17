@@ -1,0 +1,37 @@
+
+.link
+{
+    text-decoration: none;
+    color: brown;
+}
+.nav-bar
+{
+  padding: 0px;
+  margin: 0px;
+  background-color: lightgreen;
+}
+.nav-bar li
+{
+    display: inline-block;
+    padding: 20px;
+}
+.nav-bar li a
+{
+  text-decoration: none;
+}
+
+
+/* Image logo */
+.logo
+{
+  width: 4%;
+  float: left;
+  margin-left: 20px;
+  margin-top: 2px;
+  border-radius: 50%;
+}
+
+.nav-left
+{
+  text-align: right;
+}
