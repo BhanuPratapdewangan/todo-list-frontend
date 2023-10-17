@@ -16,13 +16,13 @@ function App() {
         <Routes className="">
 
           <Route element={<PrivateComponent />}>
-            {/* <Route path="/" element={<SingIn />}></Route> */}
+            <Route path="/" element={<SingIn />}></Route>
             <Route path='home' element={<HomeComponent />}></Route>
             <Route path='invalid' element={<InvalidComponent />}></Route>
           </Route>
 
           <Route path="signin" element={<SingIn />}></Route>
-          <Route path="signup" element={<SignUp />}></Route>
+          <Route path="/signup" element={<SignUp />}></Route>
         </Routes>
 
       </BrowserRouter>

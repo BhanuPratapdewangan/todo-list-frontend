@@ -18,7 +18,7 @@ const SingIn = () => {
             return false
         }
 
-        let data = await fetch("https://deploy-backend-xcoz.onrender.com/signin", {
+        let data = await fetch("http://localhost:3800/signin", {
             method: "POST",
             body: JSON.stringify({ email, password }),
             headers: {

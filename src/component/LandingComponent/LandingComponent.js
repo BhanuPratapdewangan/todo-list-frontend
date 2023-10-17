@@ -1,11 +1,12 @@
 
 import React from "react";
-import { Link, json, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../LandingComponent/LandingComponent.css"
 
 const LandingComponent = () => {
     let auth = localStorage.getItem('user')
     const navigate = useNavigate();
+    
     const logout = () => {
         localStorage.clear();
         navigate("/signup");
@@ -18,8 +19,8 @@ const LandingComponent = () => {
             <ul className="nav-bar">
                 {/* <li><Link to='/update-product'>Update Product</Link></li> */}
                 <li><Link to='/profile'>Profile</Link></li>
-                <li><Link to='/signup' onClick={logout}>Logout ({JSON.parse(auth).name})</Link></li>
-                <li>Welcome {JSON.parse(auth).name}  </li>
+                <li><Link to='/signup' onClick={logout}>Logout ({auth.name})</Link></li>
+                <li>Welcome {auth.name}  </li>
             </ul>
 
             :
