@@ -12,44 +12,43 @@ const FetchTodo = () => {
     getData();
   }, [])
 
-  // const getData = () => {
-  //   axios({
-  //     method: "get",
-  //     url: "https://todo-list-backend-eqk4.onrender.com/getdata",
-  //   }).then(response => {
-  //     setData(response.data);
-  //   })
-  // }
-
-
-  const getData = async () => {
-    let Data = await fetch("https://todo-list-backend-eqk4.onrender.com/getdata", {
+  const getData = () => {
+    axios({
       method: "get",
-      headers: {
-        'Content-Type': 'application/json',
-        authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
-      }
+      url: "https://todo-list-backend-eqk4.onrender.com/getdata",
+    }).then(response => {
+      setData(response.data);
     })
-
-    Data = await Data.json();
-
-    if (data.auth) {
-      alert("Login Successfully...!");
-      if (Data) {
-        setData(Data);
-      } else {
-        alert("Some error");
-      }
-      Navigate("/");
-    } else {
-      alert("Incorrect input");
-    }
-
-    localStorage.setItem('token', JSON.stringify(data.auth));
-    localStorage.setItem('user', JSON.stringify(Data.data));
-
-
   }
+
+
+  // const getData = async () => {
+  //   let Data = await fetch("http://localhost:1800/getdata", {
+  //     method: "get",
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       // authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
+  //     }
+  //   })
+
+  //   Data = await Data.json();
+
+  //   if (Data) {
+  //     setData(Data);
+  //   } else {
+  //     alert("Some error");
+  //   }
+
+    // if (data.auth) {
+    //   alert("Login Successfully...!");
+
+    //   Navigate("/");
+    // } else {
+    //   alert("Incorrect input");
+    // }
+
+    // localStorage.setItem('token', JSON.stringify(data.auth));
+    // localStorage.setItem('user', JSON.stringify(Data.data));
 
   return (
     <div>
@@ -63,7 +62,7 @@ const FetchTodo = () => {
               <tr key={list.id}>
                 <td>{list.id}</td>
                 <td>{list.title}</td>
-                <td>{(list.completed) === true ? <input type='checkbox' className='form-check-input' disabled checked style={{ backgroundColor: "green", color: "white" }} /> : <input type='checkbox' className='form-check-input' style={{ backgroundColor: "green", color: "white" }} />}</td>
+                <td>{(list.completed) === true ? <input type='checkbox' className='form-check-input' disabled checked style={{ backgroundColor: "green", color: "white" }} /> : <input type='checkbox' disabled className='form-check-input' style={{ backgroundColor: "", color: "white" }} />}</td>
                 <td><Link to=''><button className='btn btn-primary'><span className='bi bi-pen'></span></button></Link></td>
                 <td><button className='btn btn-danger'><span className='bi bi-trash'></span></button></td>
               </tr>
