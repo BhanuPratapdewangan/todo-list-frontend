@@ -20,7 +20,7 @@ const FetchTodo = () => {
   //     setData(response.data);
   //   })
   // }
-
+  
 
   const getData = async() => {
     let Data = await fetch("https://todo-list-backend-eqk4.onrender.com/getdata", {
